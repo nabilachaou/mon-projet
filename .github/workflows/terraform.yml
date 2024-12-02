@@ -35,16 +35,16 @@ jobs:
       # 4. Initialisez Terraform
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform # Répertoire contenant les fichiers Terraform
+        working-direcetory: /usr/bin/terraform # Répertoire contenant les fichiers Terraform
 
       # 5. Planifiez les changements
       - name: Terraform Plan
         run: terraform plan -out=plan.tfplan
-        working-directory: ./terraform
+         working-direcetory: /usr/bin/terraform 
 
       # 6. Appliquez les changements (sur la branche principale uniquement)
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve plan.tfplan
-        working-directory: ./terraform
+        working-direcetory: /usr/bin/terraform 
 
