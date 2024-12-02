@@ -36,6 +36,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: /home/nabila/mon-projet-terraform/my-terraform-project
+
 # Répertoire contenant les fichiers Terraform
 
       # 5. Planifiez les changements
@@ -48,6 +49,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve plan.tfplan
         working-directory: /home/nabila/mon-projet-terraform/my-terraform-project
-
 
 
